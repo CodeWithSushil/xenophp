@@ -23,6 +23,13 @@
     "require": {
         "symfony/dotenv": "^7.1",
         "phpmailer/phpmailer": "^6.9"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
-
 }
