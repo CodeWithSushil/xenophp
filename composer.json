@@ -21,11 +21,15 @@
         }
     ],
     "require": {
-        "symfony/dotenv": "^7.1",
         "phpmailer/phpmailer": "^6.9"
     },
     "require-dev": {
-        "pestphp/pest": "^2.34"
+        "pestphp/pest": "^2.35",
+        "symfony/console": "^7.1",
+        "symfony/dotenv": "^7.1",
+        "symfony/finder": "^7.1",
+        "symfony/process": "^7.1",
+        "symfony/string": "^7.1"
     },
     "config": {
         "allow-plugins": {
