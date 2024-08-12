@@ -29,6 +29,7 @@ function dd(...$args) {
     foreach ($args as $arg) {
         echo '<pre>';
         var_dump($arg);
+        echo '</pre>';
     }
     die;
 }
