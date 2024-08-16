@@ -10,6 +10,7 @@
             "app/Services/Global/Functions.php"
         ]
     },
+    "license": "MIT",
     "authors": [
         {
             "name": "AjayYadavAi",
