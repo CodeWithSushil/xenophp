@@ -2,6 +2,11 @@
 
 Xenophp is a lightweight PHP framework designed to provide developers with a routing system and MVC pattern for building web applications. It aims to simplify the development process and provide a structured approach to managing projects in core PHP.
 
+### Installation
+```bash
+composer create-project xeno-php/xeno-php
+```
+
 ## Features
 
 ### 1. Routing System
@@ -49,4 +54,5 @@ To get started with Xenophp, follow these steps:
 - Configure your database connection in the app/Config/Database.php file.
 - Start defining your routes in the routes/route.php file and create corresponding controllers and views.
 - Access your application through the defined routes in your web browser.
+
 
