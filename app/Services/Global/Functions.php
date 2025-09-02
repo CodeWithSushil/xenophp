@@ -72,7 +72,8 @@ class EmailValidator
     /**
      * Check MX records.
      */
-    private function checkMX()
+/*
+private function checkMX()
     {
         if (checkdnsrr($this->domain, "MX")) {
             $this->results['MX'] = [
@@ -89,7 +90,8 @@ class EmailValidator
 
     /**
      * Check A records.
-     */
+ */
+/*
     private function checkA()
     {
         if (checkdnsrr($this->domain, "A")) {
@@ -107,7 +109,8 @@ class EmailValidator
 
     /**
      * Check SPF records.
-     */
+ */
+/*
     private function checkSPF()
     {
         $records = dns_get_record($this->domain, DNS_TXT);
@@ -129,7 +132,8 @@ class EmailValidator
 
     /**
      * Check DKIM records.
-     */
+ */
+/*
     private function checkDKIM($selector = 'default')
     {
         $dkimDomain = "{$selector}._domainkey.{$this->domain}";
@@ -152,7 +156,8 @@ class EmailValidator
 
     /**
      * Check DMARC records.
-     */
+ */
+/*
     private function checkDMARC()
     {
         $dmarcDomain = "_dmarc.{$this->domain}";
@@ -175,7 +180,8 @@ class EmailValidator
 
     /**
      * Check BIMI records.
-     */
+ */
+/*
     private function checkBIMI()
     {
         $bimiDomain = "_bimi.{$this->domain}";
@@ -198,7 +204,8 @@ class EmailValidator
 
     /**
      * Run all validations.
-     */
+ */
+/*
     public function validate($dkimSelector = 'default')
     {
         $this->checkMX();
@@ -212,7 +219,8 @@ class EmailValidator
 
     /**
      * Format validation results as JSON.
-     */
+ */
+/*
     public function getResultsAsJson()
     {
         return json_encode($this->results, JSON_PRETTY_PRINT);
@@ -220,7 +228,8 @@ class EmailValidator
 
     /**
      * Format validation results as a readable string.
-     */
+ */
+/*
     public function getResultsAsString()
     {
         $output = "Validation Results for '{$this->email}':\n";
