@@ -49,7 +49,7 @@ function userIP() {
   return $ip;
 }
 
-
+/*
 class EmailValidator
 {
     private $email;
@@ -246,4 +246,5 @@ try {
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
+*/
 
