@@ -71,7 +71,7 @@
             "@phpstan"
         ],
         "test": "phpunit",
-        "test:coverage": "phpunit --coverage-xml coverage"
+        "test:coverage": "phpunit --coverage-text --coverage-clover coverage.xml"
     },
     "prefer-stable": true,
     "minimum-stability": "dev"

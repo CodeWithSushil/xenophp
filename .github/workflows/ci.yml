@@ -40,3 +40,9 @@ jobs:
 
     - name: Run test suite
       run: composer test:coverage
+
+    - name: Coverage reports
+      uses: codecov/codecov-action@v6
+      with:
+        files: coverage.xml
+        # token: ${{ secrets.CODECOV_TOKEN }}

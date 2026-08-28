@@ -5,8 +5,9 @@ namespace Tests;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use App;
 
-#[CoversClass(TestCase::class)]
+#[CoversClass(App::class)]
 class BaseTest extends TestCase
 {
     #[Test]
