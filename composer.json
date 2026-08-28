@@ -68,10 +68,9 @@
       "phpstan": "phpstan analyse",
       "lint": ["@pint", "@phpstan"],
       "test": "phpunit",
-      "test:unit": "phpunit --testsuite Unit",
+      "test:unit": "phpunit --coverage-xml coverage",
       "tests": [
         "@pint:test",
-        "@phpstan",
         "@test:unit"
       ]
     },

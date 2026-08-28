@@ -1,65 +1,67 @@
-<?php 
+<?php
+
 namespace App\Models;
+
 use PDO;
 
-class User extends BaseModel{
-	private $table_name = "users";
-	public $id;
-	public $name;
-	public $email;
-	public $password;
+class User extends BaseModel
+{
+    private $table_name = 'users';
 
-	public function register(){
+    public $id;
 
-		$query = "SELECT * FROM ".$this->table_name. " WHERE email = :email";
-		$stmt = $this->conn->prepare($query);
+    public $name;
 
-		$stmt->bindParam(':email',$this->email);
-		$stmt->execute();
-		
-		if($stmt->rowCount() > 0){
-			return false; // user already exists
-		}
+    public $email;
 
+    public $password;
 
+    public function register()
+    {
 
-		$query = "INSERT INTO ".$this->table_name. " (name,email,password) VALUES (:name,:email,:password)";
-		$stmt = $this->conn->prepare($query);
+        $query = 'SELECT * FROM '.$this->table_name.' WHERE email = :email';
+        $stmt = $this->conn->prepare($query);
 
-		$this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':email', $this->email);
+        $stmt->execute();
 
-		$stmt->bindParam(':name',$this->name);
-		$stmt->bindParam(':email',$this->email);
-		$stmt->bindParam(':password',$this->password);
+        if ($stmt->rowCount() > 0) {
+            return false; // user already exists
+        }
 
-		if($stmt->execute()){
-			return true;
-		}else{
-			return false;
-		}
-	}
+        $query = 'INSERT INTO '.$this->table_name.' (name,email,password) VALUES (:name,:email,:password)';
+        $stmt = $this->conn->prepare($query);
 
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
 
-	public function login(){
-		$query = "SELECT * FROM ".$this->table_name. " WHERE email = :email";
-		$stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':name', $this->name);
+        $stmt->bindParam(':email', $this->email);
+        $stmt->bindParam(':password', $this->password);
 
-		$stmt->bindParam(':email',$this->email);
-		$stmt->execute();
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+    public function login()
+    {
+        $query = 'SELECT * FROM '.$this->table_name.' WHERE email = :email';
+        $stmt = $this->conn->prepare($query);
 
-		if($row && password_verify($this->password, $row['password'])){
-			$this->id = $row['id'];
-			$this->name = $row['name'];
+        $stmt->bindParam(':email', $this->email);
+        $stmt->execute();
 
-			return true;
-		}else{
-			return false;
-		}
-	}
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        if ($row && password_verify($this->password, $row['password'])) {
+            $this->id = $row['id'];
+            $this->name = $row['name'];
 
-	
-
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
