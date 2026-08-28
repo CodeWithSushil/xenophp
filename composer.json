@@ -2,13 +2,13 @@
     "name": "xeno-php/xeno",
     "description": "Xeno is a light-weight, micro framework",
     "keywords": [
-      "xeno",
-      "micro",
-      "framework",
-      "light-weight",
-      "xenophp",
-      "api",
-      "rest-api"
+        "xeno",
+        "micro",
+        "framework",
+        "light-weight",
+        "xenophp",
+        "api",
+        "rest-api"
     ],
     "type": "project",
     "autoload": {
@@ -20,9 +20,9 @@
         ]
     },
     "autoload-dev": {
-      "psr-4": {
-        "Tests\\": "tests/"
-      }
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "license": "MIT",
     "authors": [
@@ -31,12 +31,12 @@
             "email": "ajayyadavexpo@gmail.com"
         },
         {
-          "name": "Sushil Kumar",
-          "email": "sushilkumbhar77@gmail.com"
+            "name": "Sushil Kumar",
+            "email": "sushilkumbhar77@gmail.com"
         }
     ],
     "require": {
-      "php": "^8.3",
+        "php": "^8.4",
         "phpmailer/phpmailer": "^6.10",
         "vlucas/phpdotenv": "^5.6"
     },
@@ -57,22 +57,25 @@
         }
     },
     "scripts": {
-      "setup": [
-        "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+        "setup": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@composer install --prefer-dist --no-interaction --no-progress",
             "@composer dump-autoload --optimize"
-      ],
-      "serve": "@php -S localhost:3000 -t public",
-      "pint": "pint",
-      "pint:test": "pint --test",
-      "phpstan": "phpstan analyse",
-      "lint": ["@pint", "@phpstan"],
-      "test": "phpunit",
-      "test:unit": "phpunit --coverage-xml coverage",
-      "tests": [
-        "@pint:test",
-        "@test:unit"
-      ]
+        ],
+        "serve": "@php -S localhost:3000 -t public",
+        "pint": "pint",
+        "pint:test": "pint --test",
+        "phpstan": "phpstan analyse",
+        "lint": [
+            "@pint",
+            "@phpstan"
+        ],
+        "test": "phpunit",
+        "test:unit": "phpunit --coverage-xml coverage",
+        "tests": [
+            "@pint:test",
+            "@test:unit"
+        ]
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
