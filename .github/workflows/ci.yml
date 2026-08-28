@@ -21,7 +21,13 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.4'
+        extensions: pcov
         coverage: pcov
+        ini-values: |
+          display_errors=On
+          display_startup_errors=On
+          error_reporting=-1
+          zend.assertions=1
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
