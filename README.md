@@ -4,7 +4,11 @@ Xenophp is a lightweight PHP framework designed to provide developers with a rou
 
 ### Installation
 ```bash
-composer create-project xeno-php/xeno-php
+composer create-project xeno-php/xeno-php My-App
+
+cd My-App
+
+composer serve
 ```
 
 ## Features
