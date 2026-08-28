@@ -71,11 +71,7 @@
             "@phpstan"
         ],
         "test": "phpunit",
-        "test:unit": "phpunit --coverage-xml coverage",
-        "tests": [
-            "@pint:test",
-            "@test:unit"
-        ]
+        "test:coverage": "phpunit --coverage-xml coverage"
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
