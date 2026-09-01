@@ -9,9 +9,13 @@ use PDO;
 class Database
 {
     private string $host = '127.0.0.1';
+
     private string $db_name = 'xeno';
+
     private string $username = 'root';
+
     private string $password = '';
+
     public $conn;
 
     public function __construct()

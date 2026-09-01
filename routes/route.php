@@ -13,4 +13,4 @@ Route::post('submit-login', 'LoginController', 'login', [Guest::class]);
 Route::get('logout', 'DashboardController', 'logout', [Auth::class]);
 Route::get('dashboard', 'DashboardController', 'index', [Auth::class]);
 
-Route::get('','DashboardController','index', [Auth::class]);
+Route::get('', 'DashboardController', 'index', [Auth::class]);
