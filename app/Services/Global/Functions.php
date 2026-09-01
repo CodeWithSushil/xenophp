@@ -6,7 +6,7 @@ function view($file_path, $data = [])
 
     $path = str_replace('.', DIRECTORY_SEPARATOR, $path);
 
-    $file = APP_ROOT.DIRECTORY_SEPARATOR.'pages'.DIRECTORY_SEPARATOR.$path.'.php';
+    $file = APP_ROOT.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$path.'.php';
 
     if (file_exists($file)) {
         extract($data);
@@ -26,7 +26,7 @@ function redirect($url)
 
 function pageAdd($file_path)
 {
-    include APP_ROOT.'/pages/'.$file_path;
+    include APP_ROOT.'/views/'.$file_path;
 }
 
 function dd(...$args)
