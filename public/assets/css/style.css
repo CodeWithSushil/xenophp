@@ -4,13 +4,55 @@
     box-sizing: border-box;
 }
 
+body{
+background-color: var(--bs-gray-100);
+}
+
+#loginForm .card .card-body .between{
+display:flex;
+justify-content:space-between;
+margin:0 auto;
+}
+
+#loginForm .card .card-body .none{
+text-decoration:none;
+}
+
+#loginForm .card .card-body .none:hover,
+#loginForm .card .card-body .none:active,
+#loginForm .card .card-body .none:focus{
+color: var(--bs-indigo)!important;
+text-decoration:underline;
+}
+
+#loginForm .card .card-body h2{
+color: var(--bs-indigo)!important;
+}
+
+#loginForm .card .card-body .btn-indigo{
+color:white;
+font-weight:700;
+background-color: var(--bs-indigo)!important;
+}
+
+#loginForm .card .card-body .form-checkbox{
+accent-color: var(--bs-indigo)!important;
+}
+
+#loginForm .card .card-body .form-control:hover,
+#loginForm .card .card-body .form-control:focus,
+#loginForm .card .card-body .form-control:active {
+border-color: var(--bs-indigo)!important;
+outline-color:var(--bs-indigo)!important;
+}
+
 @media (min-width: 769px){
     #loginForm {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh);
     }
 }
 

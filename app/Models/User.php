@@ -1,20 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use PDO;
 
 class User extends BaseModel
 {
-    private $table_name = 'users';
-
-    public $id;
-
-    public $name;
-
-    public $email;
-
-    public $password;
+    private string $table_name = 'users';
+    public int $id;
+    public string $name;
+    public string $email;
+    public string $password;
+    public string $rememberMe;
 
     public function register()
     {

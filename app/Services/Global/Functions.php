@@ -32,11 +32,21 @@ function pageAdd($file_path)
 function dd(...$args)
 {
     foreach ($args as $arg) {
-        echo '<pre>';
-        var_dump($arg);
-        echo '</pre>';
+        if(is_array($arg) || is_object($arg)){
+            echo '<pre>';
+            print_r($arg);
+            echo '</pre>';
+        } else {
+            echo '<pre>';
+            var_dump($arg);
+            echo '</pre>';
+        }
     }
     exit;
+}
+
+function remember_me(){
+    return bin2hex(random_bytes(32));
 }
 
 function userIP()
